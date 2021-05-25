@@ -10,7 +10,7 @@ header("location: foodlist.php");
 <html>
 
   <head>
-    <title> Guest Login | Le Cafe' </title>
+    <title> Customer Login | Le Cafe' </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/managerlogin.css">

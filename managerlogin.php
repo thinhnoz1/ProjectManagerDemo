@@ -102,7 +102,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
         <div class="panel-body">
           
         <form action="" method="POST">
-          
+          <!--login-->
         <div class="row">
           <div class="form-group col-xs-12">
             <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
