@@ -93,7 +93,7 @@ $conn->close();
 		<h2> <?php echo "Welcome $fullname!" ?> </h2>
 		<h1>Your account has been created.</h1>
 		<p>Login Now from <a href="managerlogin.php">HERE</a></p>
-		<p>type something<p>
+		<p>type something difference<p>
 	</div>
 </div>
 
