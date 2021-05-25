@@ -14,7 +14,7 @@ $password=$_POST['password'];
 require 'connection.php';
 $conn = Connect();
 
-// SQL query to fetch information of registerd users and finds user match.
+// Truy vấn SQL để tìm nạp thông tin của người dùng registerd và tìm người dùng phù hợp.
 $query = "SELECT username, password FROM MANAGER WHERE username=? AND password=? LIMIT 1";
 
 $stmt = $conn->prepare($query);
@@ -32,5 +32,6 @@ $error = "Username or Password is invalid";
 }
 mysqli_close($conn); // Closing Connection
 }
+
 }
 ?>

@@ -38,6 +38,7 @@ if (!$success){
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
+//body
 	<body>
 	
     <button onclick="topFunction()" id="myBtn" title="Go to top">
