@@ -243,7 +243,7 @@ else
     <div class="jumbotron">
       <center>
          <label style="margin-left: 5px;color: red;"> <h1>Oops! No food is available.</h1> </label>
-        <p>Stay Hungry...! :P</p>
+        <p>Stay Hungry...! </p>
       </center>
        
     </div>
