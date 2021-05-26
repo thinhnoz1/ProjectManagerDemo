@@ -19,7 +19,7 @@ header('Location: managerlogin.php');
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
   <body>
-
+<!-- button -->
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <span class="glyphicon glyphicon-chevron-up"></span>
