@@ -98,7 +98,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
       <div class="col-md-5 col-md-offset-4">
         <label style="margin-left: 5px;color: red;"><span> <?php echo $error;  ?> </span></label>
       <div class="panel panel-primary">
-        <div class="panel-heading"> Login </div>
+        <div class="panel-heading"> LOGIN</div>
         <div class="panel-body">
           
         <form action="" method="POST">
