@@ -20,7 +20,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
   <body>
 
-  
+  	<p>Thao</p>
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <span class="glyphicon glyphicon-chevron-up"></span>
     </button>
@@ -102,7 +102,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
         <div class="panel-body">
           
         <form action="" method="POST">
-          
+          <p>Cm3</p>
         <div class="row">
           <div class="form-group col-xs-12">
             <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
