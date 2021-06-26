@@ -10,7 +10,7 @@ header("location: foodlist.php");
 <html>
 
   <head>
-    <title> Guest Login | Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/managerlogin.css">
@@ -54,29 +54,28 @@ header("location: foodlist.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li ><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li ><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
+              <li> <a href="customersignup.php"> Đăng kí người dùng</a></li>
+              <!-- <li> <a href="managersignup.php"> Đăng kí quản lý</a></li> -->
       
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
+              <li> <a href="customerlogin.php"> Đăng nhập người dùng</a></li>
+              <li> <a href="managerlogin.php"> Đăng nhập quản lý</a></li>
    
             </ul>
             </li>
@@ -88,9 +87,8 @@ header("location: foodlist.php");
 
     <div class="container">
     <div class="jumbotron">
-     <h1>Hi Guest,<br> Welcome to <span class="edit"> Le Cafe' </span></h1>
+     <h1>Chào mừng tới <span class="edit"> 2000FOOD </span></h1>
      <br>
-   <p>Kindly LOGIN to continue.</p>
     </div>
     </div>
 
@@ -98,16 +96,17 @@ header("location: foodlist.php");
       <div class="col-md-5 col-md-offset-4">
         <label style="margin-left: 5px;color: red;"><span> <?php echo $error;  ?> </span></label>
       <div class="panel panel-primary">
-        <div class="panel-heading"> Login </div>
+        <div class="panel-heading"> Chọn phương thức đăng nhập </div>
         <div class="panel-body">
-          
-        <form action="" method="POST">
-          
+
+        <!-- Form dang nhap cua khach lai vang -->
+        <form action="customer_registered_success1.php"  method="POST">
+        <div style="margin-bottom:1rem"> Đăng nhập một lần </div>  
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
+            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Nhập tên của bạn: </label>
             <div class="input-group">
-              <input class="form-control" id="username" type="text" name="username" placeholder="Username" required="" autofocus="">
+              <input class="form-control" id="username" type="text" name="username" placeholder="Tên tài khoản" required="" autofocus="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
             </span>
@@ -116,11 +115,11 @@ header("location: foodlist.php");
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" style = "display: none" >
           <div class="form-group col-xs-12">
             <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Password: </label>
             <div class="input-group">
-              <input class="form-control" id="password" type="password" name="password" placeholder="Password" required="">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Mật khẩu" value="abc">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
             </span>
@@ -131,12 +130,56 @@ header("location: foodlist.php");
 
         <div class="row">
           <div class="form-group col-xs-4">
-              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Submit</button>
+              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Bắt đầu đặt hàng</button>
           </div>
 
         </div>
-        <label style="margin-left: 5px;">or</label> <br>
-       <label style="margin-left: 5px;"><a href="customersignup.php">Create a new account.</a></label>
+
+
+        </form>
+        
+        <div style="margin:0.5rem 0 1.5rem 0">
+          nếu bạn đã có tài khoản
+        </div>
+
+
+        <!-- Form dang nhap cua khach than quen -->
+        <form action="" method="POST">
+          
+          <div class="row">
+            <div class="form-group col-xs-12">
+              <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Tài khoản: </label>
+              <div class="input-group">
+                <input class="form-control" id="username" type="text" name="username" placeholder="Tên tài khoản" required="" autofocus="">
+                <span class="input-group-btn">
+                  <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
+              </span>
+                </span>
+              </div>           
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-12">
+              <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Mật khẩu: </label>
+              <div class="input-group">
+                <input class="form-control" id="password" type="password" name="password" placeholder="Mật khẩu">
+                <span class="input-group-btn">
+                  <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
+              </span>
+                
+              </div>           
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-4">
+                <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Đăng nhập</button>
+            </div>
+
+          </div>
+          <label style="margin-left: 5px;">hoặc</label> <br>
+          <label style="margin-left: 5px;"><a href="customersignup.php">Trở thành khách hàng thân thiết của chúng tôi</a></label>
 
         </form>
         </div>     

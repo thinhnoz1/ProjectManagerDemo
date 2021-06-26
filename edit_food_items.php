@@ -10,7 +10,7 @@ header('Location: managerlogin.php');
 <html>
 
   <head>
-    <title> Manager Login | Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/edit_food_items.css">
@@ -60,20 +60,19 @@ header('Location: managerlogin.php');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên Hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
-            <li class="active"> <a href="managerlogin.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $login_session; ?> </a></li>
+            <li class="active"> <a href="managerlogin.php">Giao diện quản lý</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
         </div>
 
@@ -85,8 +84,8 @@ header('Location: managerlogin.php');
 
 <div class="container">
     <div class="jumbotron">
-     <h1>Hello Manager! </h1>
-     <p>Manage all your restaurant from here</p>
+     <h1>Xin chào! </h1>
+     <p>Quản lý các danh mục</p>
 
     </div>
     </div>
@@ -102,12 +101,10 @@ header('Location: managerlogin.php');
     	<div class="col-xs-3" style="text-align: center;">
 
     	<div class="list-group">
-    		<a href="myrestaurant.php" class="list-group-item ">My Restaurant</a>
-    		<a href="view_food_items.php" class="list-group-item ">View Food Items</a>
-    		<a href="add_food_items.php" class="list-group-item ">Add Food Items</a>
-    		<a href="edit_food_items.php" class="list-group-item active">Edit Food Items</a>
-    		<a href="delete_food_items.php" class="list-group-item ">Delete Food Items</a>
-        <a href="view_order_details.php" class="list-group-item ">View Order Details</a>
+    		<a href="add_food_items.php" class="list-group-item ">Thêm món</a>
+    		<a href="edit_food_items.php" class="list-group-item active">Sửa món</a>
+    		<a href="delete_food_items.php" class="list-group-item ">Xóa món</a>
+        <a href="view_order_details.php" class="list-group-item ">Xem chi tiết các đơn đặt hàng</a>
     	</div>
     </div>
     
@@ -121,7 +118,7 @@ header('Location: managerlogin.php');
   <div class="form-area" style="padding: 10px 10px 110px 10px; ">
   
     <div style="text-align: center;">
-      <h3>Click On Menu <br><br></h3>
+      <h3>Danh sách món ăn <br><br></h3>
     </div>
     <?php
    
@@ -138,7 +135,7 @@ header('Location: managerlogin.php');
     name='$name', price='$price',
     description='$description' where F_ID='$F_ID'");
     }
-    $query = mysqli_query($conn, "SELECT * FROM food f WHERE f.R_ID IN (SELECT r.R_ID FROM RESTAURANTS r WHERE r.M_ID='$user_check') ORDER BY F_ID");
+    $query = mysqli_query($conn, "SELECT * FROM food ");
     while ($row = mysqli_fetch_array($query)) {
 
       ?>
@@ -172,29 +169,29 @@ header('Location: managerlogin.php');
  <div class="form-area" style="padding: 0px 100px 100px 100px;">
         <form action="edit_food_items.php" method="GET">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> EDIT YOUR FOOD ITEMS HERE </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Chỉnh sửa thông tin món </h3>
 
           <div class="form-group">
             <input class='input' type='hidden' name="dfid" value=<?php echo $row1['F_ID'];  ?> />
           </div>
 
           <div class="form-group">
-            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Name: </label>
+            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Tên món: </label>
             <input type="text" class="form-control" id="dname" name="dname" value=<?php echo $row1['name'];  ?> placeholder="Your Food name" required="">
           </div>     
 
           <div class="form-group">
-            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Price: </label>
+            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Giá món: </label>
             <input type="text" class="form-control" id="dprice" name="dprice" value=<?php echo $row1['price'];  ?> placeholder="Your Food Price (INR)" required="">
           </div>
 
           <div class="form-group">
-            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Food Description: </label>
+            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Mô tả món: </label>
             <input type="text" class="form-control" id="ddescription" name="ddescription" value=<?php echo $row1['description'];  ?> placeholder="Your Food Description" required="">
           </div>
 
           <div class="form-group">
-          <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()" value="Display alert box" > Update </button>    
+          <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right" onclick="display_alert()" value="Display alert box" > Cập nhật </button>    
       </div>
         </form>
 

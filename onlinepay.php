@@ -11,7 +11,7 @@ header("location: customerlogin.php");
 <html>
 
   <head>
-    <title> Online Payment | Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/COD.css">
@@ -55,14 +55,13 @@ header("location: customerlogin.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
 
           </ul>
 
@@ -73,18 +72,18 @@ if(isset($_SESSION['login_user1'])){
 
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="edit_food_items.php">Giao diện quản lý</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
 <?php
 }
 else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Chọn món </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng
              (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
@@ -94,7 +93,7 @@ else if (isset($_SESSION['login_user2'])) {
                 echo "0";
               ?>)
               </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
   <?php        
 }
@@ -103,18 +102,17 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
-              <li> <a href="#"> Admin Sign-up</a></li>
+              <li> <a href="customersignup.php"> Đăng kí người dùng</a></li>
+
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
+              <li> <a href="customerlogin.php"> Đăng nhập người dùng</a></li>
+              <li> <a href="managerlogin.php"> Đăng nhập quản lý</a></li>
               <li> <a href="#"> Admin Login</a></li>
             </ul>
             </li>
@@ -135,8 +133,8 @@ else {
 <div class="container">
     <div class="row">
         <div class="jumbotron">
-          <h1 class="text-center">Online Payment</h1>
-          <p class="text-center">Enter your payment details below.</p>
+          <h1 class="text-center">Thanh toán online</h1>
+          <p class="text-center">Nhập thông tin chi tiết thanh toán.</p>
         </div>
     </div>
     <div class="row">
@@ -147,7 +145,7 @@ else {
 
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <h5 class="text-muted"> Credit Card Number</h5>
+                                <h5 class="text-muted"> Mã số thẻ</h5>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
                                 <input type="text" class="form-control" placeholder="0000" required="" />
@@ -165,11 +163,11 @@ else {
                         <br>
                         <div class="row ">
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <span class="help-block text-muted small-font"> Expiry Month</span>
+                                <span class="help-block text-muted small-font"> Tháng hết hạt</span>
                                 <input type="text" class="form-control" placeholder="MM" required="" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <span class="help-block text-muted small-font">  Expiry Year</span>
+                                <span class="help-block text-muted small-font">  Năm hết hạn </span>
                                 <input type="text" class="form-control" placeholder="YY" required="" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
@@ -184,7 +182,7 @@ else {
                         <div class="row ">
                             <div class="col-md-12 pad-adjust">
 
-                                <input type="text" class="form-control" placeholder="Name On The Card" required="" />
+                                <input type="text" class="form-control" placeholder="Tên trên thẻ" required="" />
                             </div>
                         </div>
                         <br>
@@ -192,17 +190,17 @@ else {
                             <div class="col-md-12 pad-adjust">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" checked class="text-muted" required=""> Save details for fast payments. <a href="#">Learn More</a>
+                                        <input type="checkbox" checked class="text-muted" required=""> Lưu thông tin thanh toán . <a href="#">Tìm hiểu thêm</a>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                             <a href="payment.php"><input type="submit" class="btn btn-danger btn-block" value="CANCEL" required="" /></a>   
+                             <a href="payment.php"><input type="submit" class="btn btn-danger btn-block" value="LOẠI BỎ" required="" /></a>   
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
-                              <a href="COD.php"><input type="submit" class="btn btn-success btn-block" value="PAY NOW" required="" /></a>  
+                              <a href="COD.php"><input type="submit" class="btn btn-success btn-block" value="THANH TOÁN " required="" /></a>  
                             </div>
                         </div>
 

@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['login_user2'])){
-header("location: customerlogin.php"); 
+if (!isset($_SESSION['login_user2']) && !isset($_SESSION['login_user1']) )
+{
+    header("location: customerlogin.php");
 }
 
 ?>
@@ -11,7 +12,7 @@ header("location: customerlogin.php");
 <html>
 
   <head>
-    <title> Explore | Food Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/foodlist.css">
@@ -55,65 +56,64 @@ header("location: customerlogin.php");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
 
           </ul>
 
 <?php
-if(isset($_SESSION['login_user1'])){
+if (isset($_SESSION['login_user1']))
+{
 
 ?>
 
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="edit_food_items.php">Giao diện quản lý</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
 <?php
 }
-else if (isset($_SESSION['login_user2'])) {
-  ?>
+else if (isset($_SESSION['login_user2']))
+{
+?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart  (<?php
-              if(isset($_SESSION["cart"])){
-              $count = count($_SESSION["cart"]); 
-              echo "$count"; 
-            }
-              else
-                echo "0";
-              ?>) </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li class="active" ><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Chọn món </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng  (<?php
+    if (isset($_SESSION["cart"]))
+    {
+        $count = count($_SESSION["cart"]);
+        echo "$count";
+    }
+    else echo "0";
+?>) </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
-  <?php        
+  <?php
 }
-else {
+else
+{
 
-  ?>
+?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
-              <li> <a href="#"> Admin Sign-up</a></li>
+              <li> <a href="customersignup.php"> Đăng kí người dùng</a></li>
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
-              <li> <a href="#"> Admin Login</a></li>
+              <li> <a href="customerlogin.php"> Đăng nhập người dùng</a></li>
+              <li> <a href="managerlogin.php"> Đăng nhập quản lý</a></li>
             </ul>
             </li>
           </ul>
@@ -174,7 +174,7 @@ else {
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Welcome To Le Cafe'</h1>      
+    <h1 style="color:red">Chào mừng quý khách đến với 2000FOOD</h1>      
     <!--p>Let food be thy medicine and medicine be thy food</p-->
   </div>
 </div>
@@ -186,7 +186,6 @@ else {
 
 <!-- Display all Food from food table -->
 <?php
-
 require 'connection.php';
 $conn = Connect();
 
@@ -195,21 +194,21 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
 {
-  $count=0;
+    $count = 0;
 
-  while($row = mysqli_fetch_assoc($result)){
-    if ($count == 0)
-      echo "<div class='row'>";
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        if ($count == 0) echo "<div class='row'>";
 
 ?>
 <div class="col-md-3">
 
 <form method="post" action="cart.php?action=add&id=<?php echo $row["F_ID"]; ?>">
 <div class="mypanel" align="center";>
-<img src="<?php echo $row["images_path"]; ?>" class="img-responsive">
+<img style="height : 250px" src="<?php echo $row["images_path"]; ?>" class="img-responsive">
 <h4 class="text-dark"><?php echo $row["name"]; ?></h4>
 <h5 class="text-info"><?php echo $row["description"]; ?></h5>
-<h5 class="text-danger">&#8377; <?php echo $row["price"]; ?>/-</h5>
+<h5 class="text-danger"> <?php echo $row["price"]; ?> VND</h5>
 <h5 class="text-info">Quantity: <input type="number" min="1" max="25" name="quantity" class="form-control" value="1" style="width: 60px;"> </h5>
 <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>">
 <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
@@ -222,13 +221,13 @@ if (mysqli_num_rows($result) > 0)
 </div>
 
 <?php
-$count++;
-if($count==4)
-{
-  echo "</div>";
-  $count=0;
-}
-}
+        $count++;
+        if ($count == 4)
+        {
+            echo "</div>";
+            $count = 0;
+        }
+    }
 ?>
 
 </div>
@@ -237,20 +236,19 @@ if($count==4)
 }
 else
 {
-  ?>
+?>
 
   <div class="container">
     <div class="jumbotron">
       <center>
-         <label style="margin-left: 5px;color: red;"> <h1>Oops! No food is available.</h1> </label>
-        <p>Stay Hungry...! :P</p>
+         <label style="margin-left: 5px;color: red;"> <h1>Xin lỗi! Giỏ hàng không khả dụng.</h1> </label>
+        <p>Đặt món</p>
       </center>
        
     </div>
   </div>
 
   <?php
-
 }
 
 ?>
@@ -258,3 +256,10 @@ else
    
 </body>
 </html>
+
+
+<script>
+  $('.carousel').carousel({
+  interval: 1000
+})
+</script>

@@ -2,7 +2,7 @@
 include('login_m.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user1'])){
-header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
+header("location: edit_food_items.php"); 
 }
 ?>
 
@@ -10,7 +10,7 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 <html>
 
   <head>
-    <title> Manager Login | Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/managerlogin.css">
@@ -54,29 +54,27 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li ><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li ><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
+              <li> <a href="customersignup.php"> Đăng kí người dùng</a></li>
 
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
+              <li> <a href="customerlogin.php"> Đăng nhập người dùng</a></li>
+              <li> <a href="managerlogin.php"> Đăng nhập quản lý</a></li>
  
             </ul>
             </li>
@@ -88,9 +86,9 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
     <div class="container">
     <div class="jumbotron">
-     <h1>Hi Manager,<br> Welcome to <span class="edit"> Le Cafe' </span></h1>
+     <h1>Giao diện quản lý<br><span class="edit"> 2000FOOD </span></h1>
      <br>
-   <p>Kindly LOGIN to continue.</p>
+
     </div>
     </div>
 
@@ -98,16 +96,16 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
       <div class="col-md-5 col-md-offset-4">
         <label style="margin-left: 5px;color: red;"><span> <?php echo $error;  ?> </span></label>
       <div class="panel panel-primary">
-        <div class="panel-heading"> Login </div>
+        <div class="panel-heading"> Đăng nhập </div>
         <div class="panel-body">
           
         <form action="" method="POST">
           
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Username: </label>
+            <label for="username"><span class="text-danger" style="margin-right: 5px;">*</span> Tên đăng nhập: </label>
             <div class="input-group">
-              <input class="form-control" id="username" type="text" name="username" placeholder="Username" required="" autofocus="">
+              <input class="form-control" id="username" type="text" name="username" placeholder="Tên đăng nhập" required="" autofocus="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></label>
             </span>
@@ -118,9 +116,9 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
         <div class="row">
           <div class="form-group col-xs-12">
-            <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Password: </label>
+            <label for="password"><span class="text-danger" style="margin-right: 5px;">*</span> Mật khẩu: </label>
             <div class="input-group">
-              <input class="form-control" id="password" type="password" name="password" placeholder="Password" required="">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Mật khẩu" required="">
               <span class="input-group-btn">
                 <label class="btn btn-primary"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
             </span>
@@ -131,13 +129,12 @@ header("location: myrestaurant.php"); //Redirecting to myrestaurant Page
 
         <div class="row">
           <div class="form-group col-xs-4">
-              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Submit</button>
+              <button class="btn btn-primary" name="submit" type="submit" value=" Login ">Đăng nhập</button>
 
           </div>
 
         </div>
-        <label style="margin-left: 5px;">or</label> <br>
-       <label style="margin-left: 5px;"><a href="managersignup.php">Create a new account.</a></label>
+     
        
 
         </form>

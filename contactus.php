@@ -5,7 +5,7 @@ session_start();
 <html>
 
   <head>
-    <title> Contact | Le Cafe' </title>
+    <title> 2000FOOD </title>
   </head>
 
   <link rel="stylesheet" type = "text/css" href ="css/contactus.css">
@@ -49,14 +49,13 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li class="active"><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li class="active"><a href="contactus.php">Liên hệ</a></li>
           </ul>
 
           <?php
@@ -68,18 +67,18 @@ if(isset($_SESSION['login_user1'])){
 
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-            <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user1']; ?> </a></li>
+            <li><a href="edit_food_items.php">Giao diện quản lý</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
 <?php
 }
 else if (isset($_SESSION['login_user2'])) {
   ?>
            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user2']; ?> </a></li>
-            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Food Zone </a></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $_SESSION['login_user2']; ?> </a></li>
+            <li><a href="foodlist.php"><span class="glyphicon glyphicon-cutlery"></span> Chọn món </a></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng
               (<?php
               if(isset($_SESSION["cart"])){
               $count = count($_SESSION["cart"]); 
@@ -89,7 +88,7 @@ else if (isset($_SESSION['login_user2'])) {
                 echo "0";
               ?>)
              </a></li>
-            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="logout_u.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
   <?php        
 }
@@ -98,18 +97,18 @@ else {
   ?>
 
 <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Sign Up <span class="caret"></span> </a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Đăng kí <span class="caret"></span> </a>
                 <ul class="dropdown-menu">
-              <li> <a href="customersignup.php"> User Sign-up</a></li>
-              <li> <a href="managersignup.php"> Manager Sign-up</a></li>
+              <li> <a href="customersignup.php"> Đăng kí người dùng</a></li>
+
             
             </ul>
             </li>
 
-            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <li><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li> <a href="customerlogin.php"> User Login</a></li>
-              <li> <a href="managerlogin.php"> Manager Login</a></li>
+              <li> <a href="customerlogin.php"> Đăng nhập người dùng</a></li>
+              <li> <a href="managerlogin.php"> Đăng nhập quản lý</a></li>
               
             </ul>
             </li>
@@ -125,9 +124,9 @@ else {
     <br>
 
     <div class="heading">
-     <strong>Want to contact <span class="edit"> Le Cafe' </span>?</strong>
+     <strong>Kết nối với chúng tôi <span class="edit"> 2000FOOD </span></strong>
      <br>
-    Here are a few ways to get in touch with us.
+    Cho chúng tôi thêm hiểu bạn hơn.
     </div>
 
     <div class="col-xs-12 line"><hr></div>
@@ -137,10 +136,10 @@ else {
       <div class="form-area">
         <form method="post" action="">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Contact Form</h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Liên hệ</h3>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required autofocus="">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" required autofocus="">
           </div>
 
           <div class="form-group">
@@ -148,16 +147,12 @@ else {
           </div>     
 
           <div class="form-group">
-            <input type="Number" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+            <input type="Number" class="form-control" id="mobile" name="mobile" placeholder="Số điện thoại" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-          </div>
-
-          <div class="form-group">
-           <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-           <span class="help-block"><p id="characterLeft" class="help-block">Max Character length : 140 </p></span>
+           <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Tin nhắn cho cửa hàng" maxlength="140" rows="7"></textarea>
+           <span class="help-block"><p id="characterLeft" class="help-block">Kí tự tối đa : 140 </p></span>
           </div> 
           <input type="submit" name="submit" type="button" id="submit" name="submit" class="btn btn-primary pull-right"/>    
         </form>

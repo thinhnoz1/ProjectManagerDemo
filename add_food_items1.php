@@ -73,20 +73,19 @@ if (!$success){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Le Cafe'</a>
+          <a class="navbar-brand" href="index.php">2000FOOD</a>
         </div>
 
         <div class="collapse navbar-collapse " id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php">About</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="contactus.php">Liên hệ</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $login_session; ?> </a></li>
-            <li class="active"> <a href="managerlogin.php">MANAGER CONTROL PANEL</a></li>
-            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Chào mừng <?php echo $login_session; ?> </a></li>
+            <li class="active"> <a href="managerlogin.php">Giao diện quản lý</a></li>
+            <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất </a></li>
           </ul>
         </div>
 
@@ -96,9 +95,6 @@ if (!$success){
 
 	<div class="container">
     <div class="jumbotron">
-     <h1>Oops...!!! </h1>
-     <p>Kindly enter your Restaurant details before adding food items.</p>
-     <p><a href="myrestaurant.php"> Click Me </a></p>
 
     </div>
     </div>
