@@ -122,7 +122,7 @@ else {
     </nav>
 
     <div class="wide">
-        
+        <h1>cm2<h1>
         <div class="tagline">It's not our <font color="red"><strong>work life</strong></font>, it's our <font color="green"><strong><em>life's work</em>.</strong></font></div>
         <h3 style="color: red">About the food culture in Le cafe'</h3>
         <br>
